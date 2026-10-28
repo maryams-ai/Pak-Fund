@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PakFund Startup detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#0B1F2E}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:10px;font:inherit;font-size:16px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap;box-sizing:border-box}
+.btn-blue{background:#1565FF;color:#fff}
+.btn-gold{background:#F8D08A;color:#0B1F2E}
+.btn-line{background:transparent;border-color:#C3D3DE;color:#0B1F2E}
+.btn-line-dark{border-color:#3A5A6E;color:#fff}
+.btn:hover{filter:brightness(1.06);opacity:1}
+</style>
+</helmet>
+<div style="background:#fff;min-width:0">
+
+<div style="background:#10293A;color:#fff">
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:1px solid #1F3A4B">
+    <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap">
+      <a href="Main.dc.html" style="font-size:26px;font-weight:600;letter-spacing:-0.02em">pakfund</a>
+      <nav style="display:flex;gap:28px;font-size:16px;font-weight:500;flex-wrap:wrap">
+        <a href="StartupList.dc.html" style="border-bottom:2px solid #1565FF;padding-bottom:4px">Startups</a>
+        <a href="Investors.dc.html">Investors</a>
+        <a href="Dashboard.dc.html">Dashboard</a>
+        <a href="MyStartups.dc.html">For founders</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <span style="font-size:16px;font-weight:500">Ayesha Khan</span>
+      <span style="background:#1F3A4B;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600">Founder</span>
+    </div>
+  </div>
+
+  <div style="padding:40px 64px 44px">
+    <div style="font-size:14px;color:#B9C9D4;margin-bottom:20px"><a href="StartupList.dc.html">Startups</a> / FinTech / Rozgar Pay</div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start">
+      <div style="display:flex;gap:20px;align-items:center;flex:1 1 520px;min-width:0">
+        <div style="width:84px;height:84px;border-radius:16px;background:#1565FF;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:700;flex:none">R</div>
+        <div style="min-width:0">
+          <h1 style="margin:0;font-size:46px;font-weight:300;letter-spacing:-0.02em">Rozgar Pay</h1>
+          <div style="font-size:19px;color:#B9C9D4;margin:6px 0 14px">Instant wage payouts for daily-wage and gig workers.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#D6EBFA;color:#0B3A66;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600">FinTech</span>
+            <span style="background:#1F3A4B;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600">Lahore, Punjab</span>
+            <span style="background:#1F3A4B;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600">Seed</span>
+            <span style="background:#1F3A4B;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600">Active</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="Watchlist.dc.html" class="btn btn-line btn-line-dark">Save to watchlist</a>
+        <a href="Pitch.dc.html" class="btn btn-gold">Send pitch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;padding:48px 64px 0;align-items:flex-start">
+
+  <div style="flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:40px">
+
+    <section>
+      <h2 style="margin:0 0 12px;font-size:28px;font-weight:400">Overview</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#2B4252;max-width:760px">Rozgar Pay lets employers pay daily-wage and gig workers the same day through a mobile wallet, with no bank account needed. Workers can withdraw at partner shops across Punjab.</p>
+    </section>
+
+    <section>
+      <h2 style="margin:0 0 16px;font-size:28px;font-weight:400">Funding timeline</h2>
+      <div style="display:flex;flex-direction:column;border:1px solid #D9E4EC;border-radius:12px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:12px;padding:12px 20px;background:#F1F6FA;font-size:13px;font-weight:700;letter-spacing:.06em;color:#4A6272"><span>DATE</span><span>ROUND</span><span>AMOUNT</span><span>VALUATION</span></div>
+        <sc-for list="{{rounds}}" as="r" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:12px;padding:16px 20px;border-top:1px solid #D9E4EC;font-size:16px;align-items:center">
+            <span style="color:#4A6272">{{r.date}}</span><span style="font-weight:600">{{r.type}}</span><span style="font-weight:700;color:#1565FF">{{r.amount}}</span><span>{{r.valuation}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:0 0 16px;font-size:28px;font-weight:400">Backed by</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+        <sc-for list="{{backers}}" as="b" hint-placeholder-count="3">
+          <a href="InvestorDetail.dc.html" style="display:flex;gap:14px;align-items:center;border:1px solid #D9E4EC;border-radius:12px;padding:18px">
+            <div style="width:44px;height:44px;border-radius:50%;background:#D6EBFA;color:#0B3A66;display:flex;align-items:center;justify-content:center;font-weight:700;flex:none">{{b.initial}}</div>
+            <div style="min-width:0"><div style="font-weight:600;font-size:16px">{{b.name}}</div><div style="font-size:14px;color:#4A6272">{{b.role}} · {{b.amount}}</div></div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:0 0 16px;font-size:28px;font-weight:400">Similar startups</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+        <sc-for list="{{similar}}" as="s" hint-placeholder-count="3">
+          <a href="Startup.dc.html" style="display:block;border:1px solid #D9E4EC;border-radius:12px;padding:18px">
+            <div style="font-weight:600;font-size:17px">{{s.name}}</div>
+            <div style="font-size:14px;color:#4A6272;margin:4px 0 10px">{{s.city}} · {{s.stage}}</div>
+            <div style="font-size:15px;color:#2B4252">{{s.tagline}}</div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+
+  <aside style="flex:1 1 300px;min-width:0;max-width:380px;display:flex;flex-direction:column;gap:20px">
+    <div style="background:#F1F6FA;border:1px solid #D9E4EC;border-radius:12px;padding:24px">
+      <div style="font-size:14px;color:#4A6272">Total funding</div>
+      <div style="font-size:48px;font-weight:300;color:#1565FF;line-height:1.1">$1.4M</div>
+      <div style="font-size:14px;color:#4A6272;margin-top:4px">Sum of 3 rounds</div>
+    </div>
+    <div style="border:1px solid #D9E4EC;border-radius:12px;padding:24px">
+      <h3 style="margin:0 0 14px;font-size:18px;font-weight:600">Facts</h3>
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid #D9E4EC;font-size:15px"><span style="color:#4A6272">Founded</span><span style="font-weight:600">2022</span></div>
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid #D9E4EC;font-size:15px"><span style="color:#4A6272">Team size</span><span style="font-weight:600">18</span></div>
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid #D9E4EC;font-size:15px"><span style="color:#4A6272">Stage</span><span style="font-weight:600">Seed</span></div>
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid #D9E4EC;font-size:15px"><span style="color:#4A6272">Website</span><span style="font-weight:600;color:#1565FF">rozgarpay.example</span></div>
+    </div>
+    <div style="border:1px solid #D9E4EC;border-radius:12px;padding:24px">
+      <h3 style="margin:0 0 14px;font-size:18px;font-weight:600">Founders</h3>
+      <sc-for list="{{founders}}" as="f" hint-placeholder-count="2">
+        <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #D9E4EC">
+          <div style="width:40px;height:40px;border-radius:50%;background:#10293A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex:none">{{f.initial}}</div>
+          <div><div style="font-weight:600;font-size:15px">{{f.name}}</div><div style="font-size:14px;color:#4A6272">{{f.role}}</div></div>
+        </div>
+      </sc-for>
+    </div>
+  </aside>
+</div>
+
+<div style="margin-top:80px;background:#10293A;color:#B9C9D4;padding:32px 64px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:15px">
+  <span style="color:#fff;font-weight:600;font-size:18px">pakfund</span>
+  <span>Sample data only</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rounds: [
+        { date: 'Mar 2024', type: 'Seed', amount: '$900K', valuation: '$6.0M' },
+        { date: 'Jun 2023', type: 'Pre-Seed', amount: '$400K', valuation: '$2.5M' },
+        { date: 'Jan 2023', type: 'Angel', amount: '$100K', valuation: 'Not disclosed' }
+      ],
+      backers: [
+        { initial: 'R', name: 'Ravi Ventures', role: 'Lead', amount: '$600K' },
+        { initial: 'S', name: 'Sindh Angels Network', role: 'Investor', amount: '$300K' },
+        { initial: 'M', name: 'Margalla Capital', role: 'Lead', amount: '$400K' }
+      ],
+      similar: [
+        { name: 'Dukaan Cloud', city: 'Karachi', stage: 'Seed', tagline: 'Point-of-sale and credit for neighbourhood shops.' },
+        { name: 'Hisaab', city: 'Lahore', stage: 'Pre-Seed', tagline: 'Simple bookkeeping for small traders.' },
+        { name: 'Zakat Pay', city: 'Islamabad', stage: 'Seed', tagline: 'Verified giving with transparent receipts.' }
+      ],
+      founders: [
+        { initial: 'A', name: 'Ayesha Khan', role: 'CEO and co-founder' },
+        { initial: 'U', name: 'Usman Tariq', role: 'CTO and co-founder' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

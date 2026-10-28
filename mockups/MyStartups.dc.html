@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PakFund My startups</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#F1F6FA;color:#0B1F2E}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:10px;font:inherit;font-size:16px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap;box-sizing:border-box}
+.btn-blue{background:#1565FF;color:#fff}
+.btn-gold{background:#F8D08A;color:#0B1F2E}
+.btn-line{background:#fff;border-color:#C3D3DE;color:#0B1F2E}
+.btn-sm{min-height:40px;padding:0 16px;font-size:14px}
+.btn:hover{filter:brightness(1.06);opacity:1}
+</style>
+</helmet>
+<div style="background:#F1F6FA;min-width:0">
+
+<div style="background:#10293A;color:#fff">
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:1px solid #1F3A4B">
+    <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap">
+      <a href="Main.dc.html" style="font-size:26px;font-weight:600;letter-spacing:-0.02em">pakfund</a>
+      <nav style="display:flex;gap:28px;font-size:16px;font-weight:500;flex-wrap:wrap">
+        <a href="StartupList.dc.html">Startups</a><a href="Investors.dc.html">Investors</a><a href="Dashboard.dc.html">Dashboard</a>
+        <a href="MyStartups.dc.html" style="border-bottom:2px solid #1565FF;padding-bottom:4px">For founders</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px"><a href="Watchlist.dc.html" style="font-size:16px;font-weight:500">Watchlist</a><span style="font-size:16px;font-weight:500">Ayesha Khan</span><span style="background:#1F3A4B;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600">Founder</span></div>
+  </div>
+  <div style="padding:40px 64px 44px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center">
+    <div>
+      <h1 style="margin:0;font-size:46px;font-weight:300;letter-spacing:-0.02em">Khush aamdeed, Ayesha</h1>
+      <p style="margin:8px 0 0;font-size:19px;color:#B9C9D4">Aap ki startups aur pitches ek jagah.</p>
+    </div>
+    <a href="AddStartup.dc.html" class="btn btn-gold">Add a startup</a>
+  </div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;padding:32px 64px 0;align-items:flex-start">
+  <section style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:20px">
+    <h2 style="margin:0;font-size:26px;font-weight:600">My startups</h2>
+    <sc-for list="{{startups}}" as="s" hint-placeholder-count="2">
+      <div style="background:#fff;border:1px solid #D9E4EC;border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center">
+          <div style="display:flex;gap:16px;align-items:center">
+            <div style="width:56px;height:56px;border-radius:14px;background:#10293A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:24px">{{s.initial}}</div>
+            <div><div style="font-size:22px;font-weight:600">{{s.name}}</div><div style="font-size:15px;color:#4A6272">{{s.meta}}</div></div>
+          </div>
+          <span style="background:{{s.chipBg}};color:{{s.chipFg}};padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600">{{s.status}}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:32px;font-size:15px;color:#4A6272">
+          <span>Total funding <b style="color:#0B1F2E;font-size:17px">{{s.funding}}</b></span>
+          <span>Team <b style="color:#0B1F2E;font-size:17px">{{s.team}}</b></span>
+          <span>Pitches sent <b style="color:#0B1F2E;font-size:17px">{{s.pitches}}</b></span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;border-top:1px solid #D9E4EC;padding-top:20px">
+          <a href="AddStartup.dc.html" class="btn btn-line btn-sm">Edit details</a>
+          <a href="TeamRounds.dc.html" class="btn btn-line btn-sm">Team and rounds</a>
+          <a href="Startup.dc.html" class="btn btn-line btn-sm">View public page</a>
+          <a href="Pitch.dc.html" class="btn btn-blue btn-sm">Send a pitch</a>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <aside style="flex:1 1 320px;max-width:400px;min-width:0;display:flex;flex-direction:column;gap:20px">
+    <div style="background:#fff;border:1px solid #D9E4EC;border-radius:14px;padding:26px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0;font-size:18px;font-weight:600">Recent pitches</h3><a href="Pitch.dc.html" style="color:#1565FF;font-weight:600;font-size:14px">See all</a></div>
+      <sc-for list="{{pitches}}" as="p" hint-placeholder-count="3">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-top:1px solid #D9E4EC;font-size:15px">
+          <div><div style="font-weight:600">{{p.investor}}</div><div style="font-size:13px;color:#4A6272">{{p.startup}} · {{p.date}}</div></div>
+          <span style="background:{{p.bg}};color:{{p.fg}};padding:4px 11px;border-radius:999px;font-size:13px;font-weight:600">{{p.status}}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="background:#10293A;color:#fff;border-radius:14px;padding:26px">
+      <h3 style="margin:0 0 8px;font-size:18px;font-weight:600">Pehla pitch bhejna hai?</h3>
+      <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:#B9C9D4">Pehle apni team aur funding rounds poore karein. Is se investor ka bharosa barhta hai.</p>
+      <a href="Investors.dc.html" class="btn btn-gold btn-sm">Browse investors</a>
+    </div>
+  </aside>
+</div>
+
+<div style="margin-top:72px;background:#10293A;color:#B9C9D4;padding:32px 64px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:15px">
+  <span style="color:#fff;font-weight:600;font-size:18px">pakfund</span><span>Sample data only</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      startups: [
+        { initial: 'R', name: 'Rozgar Pay', meta: 'FinTech · Lahore · Seed', status: 'Live', chipBg: '#DDF5E6', chipFg: '#14532D', funding: '$1.4M', team: 18, pitches: 4 },
+        { initial: 'H', name: 'Hisaab', meta: 'FinTech · Lahore · Pre-Seed', status: 'Waiting for admin review', chipBg: '#FFF1D0', chipFg: '#7A4B00', funding: '$220K', team: 5, pitches: 0 }
+      ],
+      pitches: [
+        { investor: 'Ravi Ventures', startup: 'Rozgar Pay', date: '12 Oct', status: 'Accepted', bg: '#DDF5E6', fg: '#14532D' },
+        { investor: 'Margalla Capital', startup: 'Rozgar Pay', date: '08 Oct', status: 'Pending', bg: '#FFF1D0', fg: '#7A4B00' },
+        { investor: 'Sindh Angels Network', startup: 'Rozgar Pay', date: '30 Sep', status: 'Declined', bg: '#FDECEC', fg: '#8A1C1C' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

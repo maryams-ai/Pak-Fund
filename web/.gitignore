@@ -1,0 +1,7 @@
+node_modules
+dist
+
+# Secrets: never commit the real Supabase settings
+.env
+.env.local
+.env.*.local

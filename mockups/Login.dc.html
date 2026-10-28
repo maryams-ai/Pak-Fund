@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PakFund Sign up and Log in</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#0B1F2E}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:10px;font:inherit;font-size:16px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap;box-sizing:border-box}
+.btn-blue{background:#1565FF;color:#fff}
+.btn:hover{filter:brightness(1.06);opacity:1}
+.fld{padding:14px 16px;border-radius:10px;border:1px solid #C3D3DE;font:inherit;font-size:16px;font-weight:400;background:#fff;color:#0B1F2E}
+.lbl{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600}
+input:focus,select:focus{outline:2px solid #1565FF;outline-offset:1px}
+</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:880px;background:#fff">
+
+  <div style="flex:1 1 480px;min-width:0;background:#10293A;color:#fff;padding:56px 64px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;background-image:radial-gradient(circle at 1px 1px,#1F3A4B 1px,transparent 0);background-size:28px 28px">
+    <a href="Main.dc.html" style="font-size:28px;font-weight:600;letter-spacing:-0.02em">pakfund</a>
+    <div>
+      <h1 style="margin:0;font-size:58px;line-height:1.05;font-weight:300;letter-spacing:-0.025em">Har bara idea kisi na kisi shehar se shuru hota hai.</h1>
+      <p style="margin:24px 0 0;font-size:20px;line-height:1.55;color:#B9C9D4;max-width:520px">Lahore, Karachi, Islamabad, Multan, Peshawar. Apni jagah se apni kahani likhein, aur woh investor dhoondein jo us par yaqeen kare.</p>
+    </div>
+    <div style="font-size:15px;color:#B9C9D4">Founder ho ya investor, ek hi account se shuru karein.</div>
+  </div>
+
+  <div style="flex:1 1 520px;min-width:0;display:flex;align-items:center;justify-content:center;padding:48px 32px">
+    <form style="width:100%;max-width:460px;display:flex;flex-direction:column;gap:22px">
+
+      <div style="display:flex;background:#F1F6FA;border:1px solid #D9E4EC;border-radius:12px;padding:5px;gap:5px">
+        <button type="button" onClick="{{showSignup}}" style="{{signupTab}}">Sign up</button>
+        <button type="button" onClick="{{showLogin}}" style="{{loginTab}}">Log in</button>
+      </div>
+
+      <div>
+        <h2 style="margin:0;font-size:32px;font-weight:400;letter-spacing:-0.01em">{{heading}}</h2>
+        <p style="margin:8px 0 0;font-size:16px;color:#4A6272">{{subheading}}</p>
+      </div>
+
+      <sc-if value="{{isSignup}}" hint-placeholder-val="{{true}}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:15px;font-weight:600">I am joining as</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <button type="button" onClick="{{pickFounder}}" style="{{founderCard}}"><b style="font-size:17px">Founder</b><span style="font-size:14px;color:#4A6272;font-weight:400">I want to list my startup and pitch</span></button>
+            <button type="button" onClick="{{pickInvestor}}" style="{{investorCard}}"><b style="font-size:17px">Investor</b><span style="font-size:14px;color:#4A6272;font-weight:400">I want to find and back startups</span></button>
+          </div>
+        </div>
+        <label class="lbl">Full name<input class="fld" placeholder="Ayesha Khan"></label>
+        <label class="lbl">Phone<input class="fld" type="tel" placeholder="03XX XXXXXXX"></label>
+      </sc-if>
+
+      <label class="lbl">Email<input class="fld" type="email" placeholder="you@example.com"></label>
+      <label class="lbl">Password<input class="fld" type="password" placeholder="At least 8 characters"></label>
+
+      <a href="{{nextPage}}" class="btn btn-blue" style="min-height:54px;font-size:17px;width:100%">{{cta}}</a>
+
+      <div style="font-size:13px;line-height:1.5;color:#4A6272">Passwords are handled by Supabase Auth. PakFund never stores them in its own tables.</div>
+    </form>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":880}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { mode: 'signup', role: 'Founder' }; }
+  renderVals() {
+    const { mode, role } = this.state;
+    const signup = mode === 'signup';
+    const tab = (on) => 'flex:1;min-height:44px;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:16px;cursor:pointer;' + (on ? 'background:#fff;color:#0B1F2E;box-shadow:0 1px 3px rgba(11,31,46,.15)' : 'background:transparent;color:#4A6272');
+    const card = (on) => 'display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;padding:16px;border-radius:12px;cursor:pointer;color:#0B1F2E;background:' + (on ? '#EAF1FF' : '#fff') + ';border:2px solid ' + (on ? '#1565FF' : '#D9E4EC');
+    return {
+      isSignup: signup,
+      heading: signup ? 'Create your account' : 'Welcome back',
+      subheading: signup ? 'It takes about a minute.' : 'Log in to continue where you left off.',
+      cta: signup ? 'Create account' : 'Log in',
+      nextPage: signup && role === 'Investor' ? 'InvestorProfile.dc.html' : 'MyStartups.dc.html',
+      signupTab: tab(signup), loginTab: tab(!signup),
+      founderCard: card(role === 'Founder'), investorCard: card(role === 'Investor'),
+      showSignup: () => this.setState({ mode: 'signup' }),
+      showLogin: () => this.setState({ mode: 'login' }),
+      pickFounder: () => this.setState({ role: 'Founder' }),
+      pickInvestor: () => this.setState({ role: 'Investor' })
+    };
+  }
+}
+</script>
+</body>
+</html>

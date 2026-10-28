@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PakFund Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#fff;color:#0B1F2E}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+@keyframes pfmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pf-track{display:flex;gap:16px;width:max-content;animation:pfmarquee 40s linear infinite}
+.pf-track:hover{animation-play-state:paused}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:10px;font:inherit;font-size:16px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap;box-sizing:border-box}
+.btn-blue{background:#1565FF;color:#fff}
+.btn-gold{background:#F8D08A;color:#0B1F2E}
+.btn-line{background:transparent;border-color:#C3D3DE;color:#0B1F2E}
+.btn-line-dark{border-color:#3A5A6E;color:#fff}
+.btn:hover{filter:brightness(1.06);opacity:1}
+</style>
+</helmet>
+<div style="background:#fff;min-width:0">
+
+<div style="background:#10293A;color:#fff;position:relative;overflow:hidden">
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:1px solid #1F3A4B">
+    <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap">
+      <a href="Main.dc.html" style="font-size:26px;font-weight:600;letter-spacing:-0.02em">pakfund</a>
+      <nav style="display:flex;gap:28px;font-size:16px;font-weight:500;flex-wrap:wrap">
+        <a href="StartupList.dc.html">Startups</a>
+        <a href="Investors.dc.html">Investors</a>
+        <a href="Dashboard.dc.html">Dashboard</a>
+        <a href="MyStartups.dc.html">For founders</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="Login.dc.html" class="btn btn-line btn-line-dark" style="min-height:44px;padding:0 22px">Log in</a>
+      <a href="Login.dc.html" class="btn btn-gold" style="min-height:44px;padding:0 22px">Sign up free</a>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:48px;padding:80px 64px 96px;align-items:center">
+    <div style="flex:1 1 520px;min-width:0">
+      <h1 style="margin:0;font-size:68px;line-height:1.02;font-weight:300;letter-spacing:-0.025em">Aapka idea, sahi investor tak.</h1>
+      <p style="margin:24px 0 32px;font-size:20px;line-height:1.5;color:#B9C9D4;max-width:560px">Pakistan's founders and the people who back them, in one honest place. Search funding rounds, read real portfolios and send your pitch to the right person.</p>
+      <form style="display:flex;gap:8px;background:#fff;border-radius:14px;padding:10px;max-width:660px;box-shadow:0 0 0 4px rgba(21,101,255,.15)">
+        <label for="q" style="position:absolute;left:-9999px">Search startups or investors</label>
+        <div style="display:flex;align-items:center;padding-left:12px;color:#4A6272">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+        <input id="q" placeholder="Search a startup, investor or city" style="flex:1;min-width:0;border:0;outline:0;font:inherit;font-size:18px;color:#0B1F2E;background:transparent">
+        <a href="StartupList.dc.html" class="btn btn-blue" style="min-height:54px;padding:0 34px;font-size:17px">Search</a>
+      </form>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;max-width:700px">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#B9C9D4;font-weight:500">Industry
+          <select style="min-width:150px;padding:11px 12px;border-radius:8px;border:1px solid #1F3A4B;background:#0A1E2C;color:#fff;font:inherit;font-size:15px"><option>All industries</option><option>FinTech</option><option>AgriTech</option><option>HealthTech</option><option>Logistics</option></select></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#B9C9D4;font-weight:500">City
+          <select style="min-width:130px;padding:11px 12px;border-radius:8px;border:1px solid #1F3A4B;background:#0A1E2C;color:#fff;font:inherit;font-size:15px"><option>Any city</option><option>Lahore</option><option>Karachi</option><option>Islamabad</option></select></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#B9C9D4;font-weight:500">Stage
+          <select style="min-width:130px;padding:11px 12px;border-radius:8px;border:1px solid #1F3A4B;background:#0A1E2C;color:#fff;font:inherit;font-size:15px"><option>Any stage</option><option>Pre-Seed</option><option>Seed</option><option>Series A</option></select></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#B9C9D4;font-weight:500">Total funding
+          <select style="min-width:150px;padding:11px 12px;border-radius:8px;border:1px solid #1F3A4B;background:#0A1E2C;color:#fff;font:inherit;font-size:15px"><option>Any amount</option><option>Under $500K</option><option>$500K to $5M</option><option>Over $5M</option></select></label>
+      </div>
+    </div>
+
+    <div style="flex:1 1 420px;min-width:0;max-width:560px;border:1px solid #1F3A4B;border-radius:16px;padding:24px;background:#0D2433">
+      <div style="font-size:13px;letter-spacing:.14em;font-weight:700;color:#B9C9D4;margin-bottom:16px">LATEST FUNDING</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;border:1px solid #1565FF;border-radius:10px;background:#0A1E2C;box-shadow:0 0 24px rgba(21,101,255,.35);margin-bottom:12px">
+        <div><div style="font-size:18px;font-weight:600">Rozgar Pay</div><div style="font-size:14px;color:#B9C9D4">Lahore · FinTech</div></div>
+        <div style="text-align:right"><div style="font-size:16px;font-weight:700">$1.2M SEED</div><div style="font-size:12px;letter-spacing:.1em;color:#B9C9D4">NEW ROUND</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;border:1px solid #1F3A4B;border-radius:10px;background:#0A1E2C;margin-bottom:12px">
+        <div><div style="font-size:18px;font-weight:600">Kisan Link</div><div style="font-size:14px;color:#B9C9D4">Multan · AgriTech</div></div>
+        <div style="text-align:right"><div style="font-size:16px;font-weight:700">$450K PRE-SEED</div><div style="font-size:12px;letter-spacing:.1em;color:#B9C9D4">NEW ROUND</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;border:1px solid #1F3A4B;border-radius:10px;background:#0A1E2C;margin-bottom:12px;opacity:.7">
+        <div><div style="font-size:18px;font-weight:600">Sehat Dost</div><div style="font-size:14px;color:#B9C9D4">Karachi · HealthTech</div></div>
+        <div style="text-align:right"><div style="font-size:16px;font-weight:700">$3.4M SERIES A</div><div style="font-size:12px;letter-spacing:.1em;color:#B9C9D4">NEW ROUND</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;border:1px solid #1F3A4B;border-radius:10px;background:#0A1E2C;opacity:.35">
+        <div><div style="font-size:18px;font-weight:600">Safar Go</div><div style="font-size:14px;color:#B9C9D4">Islamabad · Logistics</div></div>
+        <div style="text-align:right"><div style="font-size:16px;font-weight:700">$800K SEED</div><div style="font-size:12px;letter-spacing:.1em;color:#B9C9D4">NEW ROUND</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#10293A;padding:0 0 56px;color:#fff">
+  <h2 style="margin:0;padding:48px 64px 8px;font-size:40px;font-weight:300;letter-spacing:-0.02em">Browse by industry</h2>
+  <p style="margin:0 64px 28px;color:#B9C9D4;font-size:18px">Hover to pause. Every card opens a filtered startup list.</p>
+  <div style="overflow:hidden;padding:0 0 4px">
+    <div class="pf-track">
+      <sc-for list="{{industries}}" as="ind" hint-placeholder-count="10">
+        <a href="StartupList.dc.html" style="display:block;width:240px;flex:none;border:1px solid #1F3A4B;border-radius:12px;padding:22px;background:#0A1E2C">
+          <div style="font-size:20px;font-weight:600">{{ind.name}}</div>
+          <div style="margin-top:6px;font-size:14px;color:#B9C9D4">{{ind.count}} startups</div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<div style="padding:72px 64px 0">
+  <div style="display:flex;flex-wrap:wrap;background:#F1F6FA;border:1px solid #D9E4EC;border-radius:14px;overflow:hidden">
+    <div style="flex:1 1 320px;padding:40px 48px;display:flex;align-items:center;font-size:22px;font-weight:600;line-height:1.3;max-width:420px">One database for Pakistan's founders and the people who fund them.</div>
+    <div style="flex:2 1 520px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div style="padding:32px 40px;border-left:1px solid #D9E4EC;border-bottom:1px solid #D9E4EC"><div style="font-size:52px;font-weight:300;color:#1565FF">1,240</div><div style="font-size:15px;color:#4A6272">startups listed</div></div>
+      <div style="padding:32px 40px;border-left:1px solid #D9E4EC;border-bottom:1px solid #D9E4EC"><div style="font-size:52px;font-weight:300;color:#1565FF">86</div><div style="font-size:15px;color:#4A6272">verified investors</div></div>
+      <div style="padding:32px 40px;border-left:1px solid #D9E4EC"><div style="font-size:52px;font-weight:300;color:#1565FF">$212M</div><div style="font-size:15px;color:#4A6272">total funding tracked</div></div>
+      <div style="padding:32px 40px;border-left:1px solid #D9E4EC"><div style="font-size:52px;font-weight:300;color:#1565FF">9</div><div style="font-size:15px;color:#4A6272">cities covered</div></div>
+    </div>
+  </div>
+  <div style="font-size:13px;color:#4A6272;margin-top:10px">Mockup numbers are sample data. The live app computes them from the database views.</div>
+</div>
+<div style="padding:80px 64px 0">
+  <h2 style="margin:0 0 8px;font-size:40px;font-weight:300;letter-spacing:-0.02em">Teen qadam mein pitch tak</h2>
+  <p style="margin:0 0 32px;font-size:18px;color:#4A6272;max-width:620px">Email ke ghalat addresses aur jawab ke intezar ki jagah, ek saaf rasta.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+    <div style="background:#F1F6FA;border:1px solid #D9E4EC;border-radius:14px;padding:32px"><div style="width:44px;height:44px;border-radius:50%;background:#1565FF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px">1</div><h3 style="margin:18px 0 8px;font-size:22px;font-weight:600">Apni startup likhein</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#2B4252">Naam, shehar, industry aur stage. Team aur funding rounds baad mein bhi add ho sakte hain.</p></div>
+    <div style="background:#F1F6FA;border:1px solid #D9E4EC;border-radius:14px;padding:32px"><div style="width:44px;height:44px;border-radius:50%;background:#1565FF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px">2</div><h3 style="margin:18px 0 8px;font-size:22px;font-weight:600">Sahi investor chunein</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#2B4252">Industry, ticket size aur shehar se filter karein, aur dekhein unhon ne pehle kis mein paisa lagaya.</p></div>
+    <div style="background:#F1F6FA;border:1px solid #D9E4EC;border-radius:14px;padding:32px"><div style="width:44px;height:44px;border-radius:50%;background:#1565FF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px">3</div><h3 style="margin:18px 0 8px;font-size:22px;font-weight:600">Pitch bhejein, status dekhein</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#2B4252">Ek paigham, aur aap ko pata rahega ke investor ne dekha, qubool kiya ya mana kiya.</p></div>
+  </div>
+</div>
+
+<div style="padding:72px 64px 0">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:28px">
+    <h2 style="margin:0;font-size:40px;font-weight:300;letter-spacing:-0.02em">Featured startups</h2>
+    <a href="StartupList.dc.html" style="color:#1565FF;font-weight:600;font-size:17px">View all startups</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+    <sc-for list="{{startups}}" as="s" hint-placeholder-count="4">
+      <a href="Startup.dc.html" style="display:flex;flex-direction:column;gap:14px;border:1px solid #D9E4EC;border-radius:12px;padding:24px;background:#fff">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:10px;background:#10293A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px">{{s.initial}}</div>
+          <div><div style="font-size:19px;font-weight:600">{{s.name}}</div><div style="font-size:14px;color:#4A6272">{{s.city}}</div></div>
+        </div>
+        <div style="font-size:16px;line-height:1.45;color:#2B4252">{{s.tagline}}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="background:#D6EBFA;color:#0B3A66;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600">{{s.industry}}</span>
+          <span style="background:#F1F6FA;color:#2B4252;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid #D9E4EC">{{s.stage}}</span>
+        </div>
+        <div style="border-top:1px solid #D9E4EC;padding-top:14px;display:flex;justify-content:space-between;font-size:14px;color:#4A6272">Total funding<span style="font-weight:700;color:#0B1F2E;font-size:17px">{{s.funding}}</span></div>
+      </a>
+    </sc-for>
+  </div>
+</div>
+
+<div style="padding:72px 64px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px">
+  <div style="background:#10293A;color:#fff;border-radius:14px;padding:40px">
+    <div style="font-size:13px;letter-spacing:.14em;font-weight:700;color:#B9C9D4">FOR FOUNDERS</div>
+    <h3 style="margin:12px 0;font-size:32px;font-weight:300">List your startup. Reach the right investors.</h3>
+    <p style="margin:0 0 24px;color:#B9C9D4;font-size:17px;line-height:1.5">Add your team and funding rounds, then send a pitch request to investors who back your industry and ticket size.</p>
+    <a href="Login.dc.html" class="btn btn-gold">Add your startup</a>
+  </div>
+  <div style="background:#F1F6FA;border:1px solid #D9E4EC;border-radius:14px;padding:40px">
+    <div style="font-size:13px;letter-spacing:.14em;font-weight:700;color:#4A6272">FOR INVESTORS</div>
+    <h3 style="margin:12px 0;font-size:32px;font-weight:300">Build a profile. Receive pitches that fit.</h3>
+    <p style="margin:0 0 24px;color:#2B4252;font-size:17px;line-height:1.5">Set your industries and ticket size, track your portfolio and accept or decline pitches in one inbox.</p>
+    <a href="Investors.dc.html" class="btn btn-blue">Browse investors</a>
+  </div>
+</div>
+
+<div style="margin-top:80px;background:#10293A;color:#B9C9D4;padding:32px 64px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:15px">
+  <span style="color:#fff;font-weight:600;font-size:18px">pakfund</span>
+  <span>Database course project · BS AI, COMSATS Lahore · Sample data only</span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const base = [
+      { name: 'FinTech', count: 214 }, { name: 'AgriTech', count: 118 },
+      { name: 'HealthTech', count: 96 }, { name: 'EdTech', count: 87 },
+      { name: 'Logistics', count: 74 }, { name: 'E-commerce', count: 163 },
+      { name: 'SaaS', count: 121 }, { name: 'CleanTech', count: 42 }
+    ];
+    const startups = [
+      { initial: 'R', name: 'Rozgar Pay', city: 'Lahore', tagline: 'Instant wage payouts for daily-wage and gig workers.', industry: 'FinTech', stage: 'Seed', funding: '$1.4M' },
+      { initial: 'K', name: 'Kisan Link', city: 'Multan', tagline: 'Connects small farmers directly with wholesale buyers.', industry: 'AgriTech', stage: 'Pre-Seed', funding: '$450K' },
+      { initial: 'S', name: 'Sehat Dost', city: 'Karachi', tagline: 'Online doctor consults and lab tests at home.', industry: 'HealthTech', stage: 'Series A', funding: '$3.4M' },
+      { initial: 'S', name: 'Safar Go', city: 'Islamabad', tagline: 'Intercity parcel delivery with live tracking.', industry: 'Logistics', stage: 'Seed', funding: '$800K' }
+    ];
+    return { industries: base.concat(base), startups };
+  }
+}
+</script>
+</body>
+</html>
